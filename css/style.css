@@ -8,7 +8,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: yellow;
+    background-color: rgb(9, 4, 56);
     overflow-x: hidden;
     height: 100%;
     display: flex;
@@ -217,8 +217,8 @@ body {
 
 .page-one, .page-two, .page-three, .page-four {
     box-shadow:
-        0 5px 15px rgba(255, 255, 255, 0.5), /* Bayangan pertama, lebih soft */
-        0 20px 30px rgb(249, 249, 3); /* Bayangan kedua, lebih tebal di bagian tengah */
+        0 5px 10px rgba(255, 255, 255, 0.5), /* Bayangan pertama, lebih soft */
+        0 15px 20px rgb(249, 249, 3); /* Bayangan kedua, lebih tebal di bagian tengah */
 }
 
 /*  ----------------------  */
@@ -309,5 +309,32 @@ html, body {
 
     .my-skill-box {
         grid-template-columns: repeat(4, 1fr); /* Kembali ke 4 kolom pada layar besar */
+    }
+}
+
+/* Media Query untuk layar kecil (mobile) */
+@media (max-width: 600px) {
+    .footer-item-btn {
+        width: 120px !important;  /* Ubah ukuran menjadi lebih kecil */
+        height: 40px !important;  /* Tinggi tombol berkurang */
+        font-size: medium !important;  /* Ukuran font lebih kecil */
+    }
+}
+
+/* Media Query untuk layar tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .footer-item-btn {
+        width: 130px !important;  /* Sedikit lebih kecil dibanding desktop */
+        height: 45px !important;
+        font-size: large !important;
+    }
+}
+
+/* Media Query untuk layar besar (desktop) */
+@media (min-width: 1025px) {
+    .footer-item-btn {
+        width: 150px; /* Kembali ke ukuran asli */
+        height: 50px;
+        font-size: large;
     }
 }
