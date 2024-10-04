@@ -35,7 +35,8 @@ body {
 .page-two {
     margin: 0;
     width: 100%;
-    min-height: 100vh;
+    padding: 100px 0;
+    min-height: auto;
     background-color: rgb(8, 19, 19);
 }
 
@@ -48,7 +49,7 @@ body {
 .profile-pic img {
     margin-top: 50px;
     border-radius: 50%;
-    width: 15%;
+    width: 200px;
     border: 3px solid yellow;    
 }
 
@@ -75,9 +76,9 @@ body {
 
 .page-three {
     margin: 0;
-    padding-top: 0;
+    padding: 100px 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     background-color: rgb(0, 18, 22);
     display: flex;
     justify-content: center;
@@ -95,7 +96,7 @@ body {
 
 .my-skill-box {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     padding: 20px;
     border-radius: 20px;
@@ -128,9 +129,9 @@ body {
 
 .page-four {
     margin: 0;
-    padding-top: 100px;
+    padding: 100px 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     background-color: rgb(0, 10, 27);
     display: flex;
     justify-content: center;
@@ -139,17 +140,16 @@ body {
 }
 
 .page-four h1 {
-    margin: 50px auto;
     color: yellowgreen;
     font-size: 30pt;
 }
 
 .experiences {
     width: 80%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .experiences ol {
@@ -171,11 +171,12 @@ body {
     padding: 50px;
     background-color: rgb(0, 0, 34);
     border: 2px solid yellowgreen;
-    margin-top: 200px;
+    margin-top: -100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 50px;
+    box-shadow: 0 -15px 30px rgba(255, 255, 255, 0.9); /* Bayangan putih tebal di bagian atas */
 }
 
 .footer--item {
@@ -214,64 +215,98 @@ body {
     margin-top: 20px; /* Memberi jarak antara copyright dengan tombol */
 }
 
-@media only screen and (max-width: 375px) {
-    html, body {
-        background-color: rgb(1, 1, 40);
-        width: 100%;
-    }
+.page-one, .page-two, .page-three, .page-four {
+    box-shadow:
+        0 5px 15px rgba(255, 255, 255, 0.5), /* Bayangan pertama, lebih soft */
+        0 20px 30px rgb(249, 249, 3); /* Bayangan kedua, lebih tebal di bagian tengah */
+}
 
-    .page-one {
-        background-color: rgb(1, 44, 69);
-        width: 100%;
-    }
+/*  ----------------------  */
+/* Aturan Umum */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
-    .page-two {
-        margin: 0;
-        background-color: rgb(1, 1, 40);
-        width: 100%;
-    }
-
-    .profile-pic {
-        margin: 0 auto;
-        text-align: center;
-    }
-    
+/* Untuk layar kecil seperti smartphone */
+@media (max-width: 600px) {
     .profile-pic img {
-        margin-top: 10px;
-        width: 40%;
-        border-radius: 50%;
-        border: 3px solid yellow;    
+        width: 150px; /* Lebih kecil agar sesuai layar kecil */
     }
-    
+
     .profile-desc {
-        text-align: center;
-        width: 95%;
+        width: 90%; /* Lebih lebar agar teks sesuai layar kecil */
     }
-    
+
     .profile-desc h1 {
-        color: yellowgreen;
-        font-size: 20pt;
+        font-size: 24pt; /* Font lebih kecil di layar kecil */
     }
-    
+
     .profile-desc p {
-        margin: 0;
-        color: yellow;
-        font-size: 11pt;
-        text-align: left;
+        font-size: 12pt;
     }
-    
+
     .profile-desc h2 {
-        color: wheat;
-        font-size: 16pt;
+        font-size: 18pt;
     }
 
-    .page-three {
-        background-color: rgb(1, 40, 30);
-        width: 100%;
+    .my-skill-box {
+        grid-template-columns: repeat(2, 1fr); /* Ubah grid menjadi 2 kolom pada layar kecil */
     }
 
-    .page-four {
-        background-color: rgb(40, 34, 1);
-        width: 100%;
+    .experiences ol li {
+        font-size: large; /* Ukuran font lebih kecil di layar kecil */
+    }
+
+    .footer {
+        width: 90%; /* Footer lebih lebar di layar kecil */
+        padding: 30px;
+    }
+
+    .footer-item-btn {
+        width: 120px;
+        height: 40px;
+        font-size: medium;
+    }
+}
+
+/* Untuk layar tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .profile-pic img {
+        width: 180px;
+    }
+
+    .profile-desc {
+        width: 70%; /* Teks lebih sempit agar lebih rapi di tablet */
+    }
+
+    .my-skill-box {
+        grid-template-columns: repeat(3, 1fr); /* Ubah grid menjadi 3 kolom */
+    }
+
+    .experiences ol li {
+        font-size: x-large;
+    }
+
+    .footer {
+        width: 80%;
+        padding: 40px;
+    }
+
+    .footer-item-btn {
+        width: 130px;
+        height: 45px;
+        font-size: large;
+    }
+}
+
+/* Untuk layar besar seperti desktop */
+@media (min-width: 1025px) {
+    .profile-desc {
+        width: 50%;
+    }
+
+    .my-skill-box {
+        grid-template-columns: repeat(4, 1fr); /* Kembali ke 4 kolom pada layar besar */
     }
 }
