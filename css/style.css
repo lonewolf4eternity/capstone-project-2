@@ -267,6 +267,7 @@ html, body {
         width: 120px;
         height: 40px;
         font-size: medium;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
