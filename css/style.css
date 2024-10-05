@@ -182,9 +182,10 @@ body {
 .footer--item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
